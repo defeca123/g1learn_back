@@ -9,3 +9,8 @@
 
     php artisan serve
     
+### URL para criar um novo usuario
+    http://localhost:8000/register
+
+### URL para logar com um usuario ja existente
+    http://localhost:8000/login
