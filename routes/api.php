@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\TopicsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('messages', [MessagesController::class, 'index']);
+Route::post('create', [MessagesController::class, 'messages']);
+Route::put('update/{id}', [MessagesController::class, 'update']); 
+Route::delete('delete/{id}', [MessagesController::class, 'delete']);   
+Route::get('topics', [TopicsController::class, 'index_topics']);
+Route::post('topics_create', [TopicsController::class, 'create_topics']);
